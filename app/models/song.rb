@@ -7,7 +7,8 @@ class Song < ActiveRecord::Base
   end
 
   def drake_made_this
-    
+    song = Song.new
+    drake = Artist.where(name:'Drake') || Artist.new(name: 'Drake') 
     binding.pry
     # when this method is called it should assign the song's artist to Drake
     # Drake doesn't exist in the database as an artist yet, so you'll have to create a record
