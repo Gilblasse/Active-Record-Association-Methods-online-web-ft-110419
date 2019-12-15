@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
 
   def drake_made_this
     song = Song.new
-    drake = Artist.find_by(name:'Drake') || Artist.new(name: 'Drake') 
+    drake = Artist.find_by(name:'Drake') || Artist.create(name: 'Drake') 
     drake.songs << song
     # when this method is called it should assign the song's artist to Drake
     # Drake doesn't exist in the database as an artist yet, so you'll have to create a record
